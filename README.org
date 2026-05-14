@@ -1,0 +1,31 @@
+#+TITLE: My study notes for MIT-6S081
+#+AUTHOR: Ziad Ahmed
+
+** Progress Tracker
+
+| Lecture                                      | Labs    | OSTEP as a references                                          | Notes    | Status | Review |
+|----------------------------------------------+---------+----------------------------------------------------------------+----------+--------+--------|
+| L1: Introduction                             | Util    | Ch. 2 – Introduction to Operating Systems                      | [[file:lecture_1/index.org][click me]] | TODO   | -      |
+| L2: C & gdb                                  | Syscall | —                                                              | -        | TODO   | -      |
+| L3: OS Org & syscalls                        |         | Ch. 2, Ch. 6 – Limited Direct Execution                        | -        | TODO   | -      |
+| L4: Page Tables                              | Pgtbl   | Ch. 18 – Paging: Intro, Ch. 19 – TLBs, Ch. 20 – Smaller Tables | -        | TODO   | -      |
+| L5: Calling Convention & stack frames RISC-V |         | —                                                              | -        | TODO   | -      |
+| L6: Isolation & system call entry/exit       | Traps   | Ch. 6 – Limited Direct Execution                               | -        | TODO   | -      |
+| L7: Q&A labs                                 |         | —                                                              | -        | TODO   | -      |
+| L8: Page faults                              | Lazy    | Ch. 21 – Beyond Physical Memory: Mechanisms, Ch. 22 – Policies | -        | TODO   | -      |
+| L9: Interrupts                               |         | Ch. 6, Ch. 36 – I/O Devices                                    | -        | TODO   | -      |
+| L10: Multiprocessors & locking               | Cow     | Ch. 10 – Multiprocessor Scheduling, Ch. 28 – Locks             | -        | TODO   | -      |
+| L11: Thread switching                        | Thread  | Ch. 26 – Concurrency: An Introduction, Ch. 27 – Thread API     | -        | TODO   | -      |
+| L12: Q&A labs                                |         | —                                                              | -        | TODO   | -      |
+| L13: Sleep & wakeup                          | Lock    | Ch. 30 – Condition Variables                                   | -        | TODO   | -      |
+| L14: File systems                            |         | Ch. 39 – Files & Directories, Ch. 40 – FS Implementation       | -        | TODO   | -      |
+| L15: Crash recovery                          | Fs      | Ch. 42 – Crash Consistency: FSCK & Journaling                  | -        | TODO   | -      |
+| L16: File system performance & fast recovery |         | Ch. 41 – FFS, Ch. 43 – Log-structured FS                       | -        | TODO   | -      |
+| L17: Virtual memory for applications         | Mmap    | Ch. 23 – Complete Virtual Memory Systems                       | -        | TODO   | -      |
+| L18: OS Organization                         |         | Ch. 2 – Introduction to Operating Systems                      | -        | TODO   | -      |
+| L19: Virtual Machines                        | Net     | Appendix B – Virtual Machine Monitors                          | -        | TODO   | -      |
+| L20: Kernel and HLL                          |         | —                                                              | -        | TODO   | -      |
+| L21: Networking                              |         | Ch. 48 – Distributed Systems                                   | -        | TODO   | -      |
+| L22: Meltdown                                |         | —                                                              | -        | TODO   | -      |
+| L23: RCU notes                               |         | —                                                              | -        | TODO   | -      |
+| L24: Last Day                                |         | —                                                              | -        | TODO   | -      |
