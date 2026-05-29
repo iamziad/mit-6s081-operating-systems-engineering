@@ -1,0 +1,6 @@
+#+TITLE: My Notes for Lec2
+#+AUTHOR: Ziad Ahmed
+#+DATE: May 30 2026
+:PROPERTIES:
+#+OPTIONS:
+:END:
