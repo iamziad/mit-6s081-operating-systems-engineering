@@ -21,6 +21,33 @@
 
 -----
 
+*** Purpose of OS
+
+- Abstraction
+
+بيجرد الhardware للراحة والسهولة في الاستخدام
+
+- Isolation
+
+بيعزل البرامج عن بعضها عشان يوفرلنا بيئة مستقرة, لو برنامج هنج مش هيأثر علي
+برامج تانية ولا هيأثر علي الOS نفسه.
+
+- Protection
+
+بيحمي النظام من البرامج المشبوهة
+
+- Performance & Efficiency
+
+بيخلينا نستفيد من كامل قوة واداء الhardware ونفس الوقت بيحافظ علي استهلاك الطاقة
+اذا كانت محدودة.
+
+- Resource Managament
+
+بيوزع موارد الجهاز علي كل البرامج بطريقة عادلة
+
+*** Why studying OS is Hard/Interesting?
+ - The developemnt enviornment is unforgiving because u deal directly with the hardware.
+   - There is no abstractions, because ur the one who supposed to create that abstraction
 *** Virtualization
 
 الOS بياخد pyhsical resources زي (CPU, memory, disk) ويحولها لشكل افتراضي من
@@ -95,7 +122,7 @@ Results
 
 ***** Simple Example of Memory Virtualization
 
-#+BEGIN_SRC C :tangle "./code/mem.c"
+#+BEGIN_SRC c :tangle "./code/mem.c"
   #include <unistd.h>
   #include <stdio.h>
   #include <stdlib.h>
@@ -146,7 +173,7 @@ Results
  مبنية فوق الhardware وبين الhardware الحقيقي.
 
  -----
- 
+
 **** Policies
 
 الOS عنده Policies بتحدد مين يشتغل الاول ومين يستنا
@@ -261,29 +288,6 @@ instruction واحدة الا انها في الحقيقة بتتكون من 3 i
 device driver للdisk عشان تتكلم معاه, لكن الOS بيجرد كل ده عنك وبيديك file
 system سهل التعامل معاه.
 
-*** Purpose of OS
-- Abstraction
-
-بيجرد الhardware للراحة والسهولة في الاستخدام
-
-- Isolation
-
-بيعزل البرامج عن بعضها عشان يوفرلنا بيئة مستقرة, لو برنامج هنج مش هيأثر علي
-برامج تانية ولا هيأثر علي الOS نفسه.
-
-- Protection
-
-بيحمي النظام من البرامج المشبوهة
-
-- Performance & Efficiency
-
-بيخلينا نستفيد من كامل قوة واداء الhardware ونفس الوقت بيحافظ علي استهلاك الطاقة
-اذا كانت محدودة.
-
-- Resource Managament
-
-بيوزع موارد الجهاز علي كل البرامج بطريقة عادلة
-
 *** Processes
 
 الprocess هي عبارة عن running program, انما الprogram نفسه هو مجرد ملف موجود علي
@@ -294,6 +298,7 @@ system سهل التعامل معاه.
 الProcess بتتكون من instruction + static data
 
 *** Introduction to UNIX System Calls
+
 - fork()
   - when we call fork() it will clone the address space of the *parent*, and
     create new process called *child*.
@@ -344,14 +349,6 @@ system سهل التعامل معاه.
 
 #+RESULTS:
 : hello
-
-
-
-
-
-# Local Variables:
-# eval: (olivetti-mode 1)
-# End
 
 ** Pipes & Redirects
 *** The low-level idea behind them
@@ -411,8 +408,9 @@ int fd5 = dup(fd3);
 -----
 
 *** Another important info
+
 - الfd الجديد ديما بياخد *اصغر* رقم متاح
-- اغلب الposix/unix utilies مصممة انها تقرأ من الstdin لو ما اتبعتلهاش argument محددة 
+- اغلب الposix/unix utilies مصممة انها تقرأ من الstdin لو ما اتبعتلهاش argument محددة
 
 -----
 
@@ -440,9 +438,9 @@ if (fork() == 0) {
 *** dup()
 
 - الdup() بترجع fd جديد بيشاور علي نفس الopen file description اللي بيشاور عليه الfd القديم, فا كدا بقا عندنا 2 fd بيشاورا علي نفس الobject في الkernel, يعني الref count بتاع الobject ده بيقا 2
-  
+
 - الopen file description في الkernel بيبقا ليه ref count, والkernel عمره ما هيقفل الobject ده الا لما الref count يبقي ب0 (shared pointer)
-  
+
 #+begin_src C
 int savestdin = dup(0); // cloned the open file desc of stdin in a new fd
 #+end_src
@@ -465,7 +463,7 @@ int savestdin = dup(0); // cloned the open file desc of stdin in a new fd
 
 #+begin_src C
 dup2(savestdin, 0); // clone 'savestdin' to stdin
-#+end_src 
+#+end_src
 
 
 -----
@@ -476,7 +474,7 @@ dup2(savestdin, 0); // clone 'savestdin' to stdin
   1. بنقفل الstdin عشان نستخدم الfd 0 للملف بتاعنا
   2. بنفتح الملف اللي عاوزينه ياخد الfd 0, بس هنا ممكن thread تانية تكون فتحت ملف جديد قبلنا, وفي الحالة دي الthread التاني هيكون خد مننا الfd 0 والthread الاولي هتاخد رقم تاني ومن هنا هتحصل بلاوي كتير
 
-- Non thread-safe example:     
+- Non thread-safe example:
 #+BEGIN_SRC C
 if (fork() == 0) {
     close(0);
@@ -521,7 +519,7 @@ if (fork() == 0) {
 
 - Simple Example
 
-#+begin_src C :tangle ./code/pipe.c
+#+begin_src c :tangle ./code/pipe.c
 #include <stdio.h>
 #include <unistd.h>
 
@@ -554,12 +552,12 @@ int main()
 - Real world example
 
   #+begin_src bash
-ls | grep file.txt
+ls | grep string
   #+end_src
 
   - لو grep اشتغل قبل ls, هيفضل في حالة blocking لحد ما ls يكتب داتا, او لحد ما الfd[0] يتقفل.
-    
-#+begin_src C
+
+#+begin_src c
 //  parent: shell
 
 int fd[2];
@@ -625,7 +623,6 @@ int main() {
     }
     return 0;
 }
-
 #+end_src
 
 

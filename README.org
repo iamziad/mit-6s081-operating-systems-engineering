@@ -5,7 +5,7 @@
 
 | Lecture                                      | Labs    | OSTEP as a references                                          | Notes    | Status | Review |
 |----------------------------------------------+---------+----------------------------------------------------------------+----------+--------+--------|
-| L1: Introduction                             | Util    | Ch. 2 – Introduction to Operating Systems                      | [[file:lecture_1/index.org][click me]] | TODO   | -      |
+| L1: Introduction                             | Util    | Ch. 2 – Introduction to Operating Systems                      | [[file:lecture_1/index.org][click me]] | DONE   | -      |
 | L2: C & gdb                                  | Syscall | —                                                              | -        | TODO   | -      |
 | L3: OS Org & syscalls                        |         | Ch. 2, Ch. 6 – Limited Direct Execution                        | -        | TODO   | -      |
 | L4: Page Tables                              | Pgtbl   | Ch. 18 – Paging: Intro, Ch. 19 – TLBs, Ch. 20 – Smaller Tables | -        | TODO   | -      |
